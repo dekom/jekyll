@@ -1,3 +1,6 @@
+source :rubygems
+
 gem 'jekyll'
-gem 'redcarpet'
 gem 'maruku'
+gem 'compass'
+gem 'bootstrap-sass'
