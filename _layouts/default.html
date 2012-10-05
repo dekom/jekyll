@@ -1,24 +1,35 @@
 <!DOCTYPE HTML>
-<html>
+<html lang='en'>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>{{site.time}}</title>
+  <title>{{site.title}}</title>
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  {% if page.fullcalendar %}
+    <link rel="stylesheet" href="{{site.fullcalendar}}/fullcalendar.css" type="text/css" />
+    <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{site.fullcalendar}}/fullcalendar.js" type="text/javascript" charset="utf-8"></script>
+  {% endif %}
 </head>
 <body>
-  <header>
-    
-  </header>
-  <section>
-    <section id='latest_posts'>
-      {% capture markdown_posts %}
-        {% include post_lists.markdown %}
-      {% endcapture %}
+  <div class="container">
+    <header class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="/"><i class="icon-home "></i> Home</a></li>
+          <li><a href="/projects.html"><i class="icon-fire"></i> Projects</a></li>
+        </ul>
+        <a href="/" class="brand">Xing Zhou</a>
+      </div>
+    </header>
 
-      {{ markdown_posts | unindent | markdownify }}
+    {{ content }}
+
+    <section>
+      <iframe src="https://www.google.com/calendar/embed?title=Schedule&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=xingzhou.me_8o9u34616hapbstlj93eciqb7k%40group.calendar.google.com&amp;color=%23B1440E&amp;src=me%40xingzhou.me&amp;color=%232952A3&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%23875509&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FNew_York" style=" border-width:0 " width="100%" height="600" frameborder="0" scrolling="no"></iframe>
     </section>
-  </section>
-  <footer>
-    
-  </footer>
+    <footer>
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fusers%2F8788863&amp;auto_play=false&amp;show_artwork=true&amp;color=900"></iframe>
+    </footer>
+  </div>
 </body>
 </html>

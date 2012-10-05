@@ -1,0 +1,32 @@
+// I gather this file is a starting point for the project.
+$deep_red: #900;
+$linkColor: $deep_red;
+$linkColorHover: darken($linkColor, 15%);
+
+$navbarLinkColor: $linkColor;
+$navbarLinkColorHover: $linkColorHover;
+
+@import "bootstrap";
+
+body {
+  padding: {top: 10px; }
+}
+
+h1 {
+  a:hover { text-decoration: none; }
+}
+
+header.navbar {
+  .navbar-inner a {
+    font-size: large;
+    i { vertical-align: baseline; }
+
+    &.brand { font-size: 200%; font-weight: bold; float: right; }
+  }
+}
+
+#posts {
+  ul li a { display: inline; }
+}
+// Include responsive Bootstrap styles
+// @import "bootstrap-responsive";

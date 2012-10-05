@@ -1,3 +1,23 @@
 ---
 layout: default
+fullcalendar: true
 ---
+
+<div class="row">
+  <section class="span6" id="posts">
+    {% assign p = site.posts | first %}
+    <article>
+      <section>
+        <h1><a href="{{p.url}}">{{p.title}}</a> <small>{{p.date | date_to_string}}</small></h1>
+        <p>{{p.content | unindent | markdownify }}</p>
+      </section>
+    </article>
+  </section>
+  <section class="span4 pull-right well" id="bio">
+    {% capture bio %}
+      {% include bio.markdown %}
+    {% endcapture %}
+
+    {{ bio | unindent | markdownify }}
+  </section>
+</div>
